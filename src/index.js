@@ -41,7 +41,7 @@ module.exports = function(config) {
 function get(firebaseRef) {
     return function(id, cb) {
         firebaseRef.child(id).once('value').then(function(snapshot) {
-          cb(snapshot.val());
+          cb(null, snapshot.val());
         });
     };
 }
